@@ -1,0 +1,6 @@
+*.o
+
+**/typing_test
+**/architecture.txt
+bin/
+test/
