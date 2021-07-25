@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include "file.h"
+#include "test.h"
 
 int main() {
     srand(time(NULL));
-    puts(random_string(10));
+    return EXIT_SUCCESS;
 }
