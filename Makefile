@@ -3,11 +3,7 @@
 CC = clang
 CFLAGS = -std=c11 -O2 -g -Wall -Wextra -Wpedantic -Wstrict-aliasing \
 		 -Wno-pointer-arith -Wno-newline-eof -Wno-unused-parameter -Wno-gnu-statement-expression \
-<<<<<<< HEAD
 		 -Wno-gnu-compound-literal-initializer -Wno-gnu-zero-variadic-macro-arguments 
-=======
-		 -Wno-gnu-compound-literal-initializer -Wno-gnu-zero-variadic-macro-arguments -Wno-sign-compare
->>>>>>> a589d27... Added random string geneation
 
 OUTDIR = ./bin
 SRCDIR = ./src
