@@ -19,19 +19,21 @@ size_t total_word_count() {
     return word_count;
 }
 
-// 
 char* random_string(const size_t word_count) {
-    char* out_str = malloc(sizeof(char) * MAX_STR_LEN);
-    const char* delimeter = " ";
-    size_t TOTAL_WORD_COUNT = total_word_count();
+    // The maximum possible size for the resulting out_str
+    const size_t OUT_STR_SIZE = sizeof(char) * MAX_STR_LEN * word_count;
+    const size_t TOTAL_WORD_COUNT = total_word_count();
+    const char* DELIMETER = " ";
 
     // Thanks John Carmack!
     char* words[] = {
         #include WORDS_PATH
     };
 
+    char* out_str = malloc(OUT_STR_SIZE);
+
     size_t random_index;    
-    for (int i = 0; i < word_count; ++i) {
+    for (size_t i = 0; i < word_count; ++i) {
         // Picks a random word from words.txt and appends
         // it to out_str
         random_index = rand_range(0, TOTAL_WORD_COUNT);
@@ -39,8 +41,7 @@ char* random_string(const size_t word_count) {
 
         // Adds a space if not on the last iteration
         if (i < word_count - 1)
-            strcat(out_str, delimeter);
+            strcat(out_str, DELIMETER);
     }
-
     return out_str;
 }
