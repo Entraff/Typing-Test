@@ -33,7 +33,7 @@ char* random_string(const size_t word_count) {
     char* out_str = malloc(OUT_STR_SIZE);
 
     size_t random_index;    
-    for (size_t i = 0; i < word_count; ++i) {
+    for (int i = 0; i < word_count; ++i) {
         // Picks a random word from words.txt and appends
         // it to out_str
         random_index = rand_range(0, TOTAL_WORD_COUNT);

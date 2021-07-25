@@ -7,6 +7,6 @@
 
 int main() {
     srand(time(NULL));
-    puts(random_string(100));
+    puts(random_string(10));
     return EXIT_SUCCESS;
 }
