@@ -10,4 +10,6 @@ struct Test {
     int errors;
 };
 
+struct Test* test_init(const size_t word_count);
+
 #endif // TEST_H

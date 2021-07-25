@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include "file.h"
 
 int main() {
-    printf("This build system works!");
+    srand(time(NULL));
+    puts(random_string(10));
 }

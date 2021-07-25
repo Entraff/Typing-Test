@@ -1,6 +1,13 @@
+# Object Files
 *.o
 
+# Development specific files
+
+# Final binary
 **/typing_test
+
+# Note taking
 **/architecture.txt
-bin/
-test/
+
+# CTags output
+**/tags
