@@ -30,7 +30,7 @@ char* random_string(const size_t word_count) {
         #include WORDS_PATH
     };
 
-    char* out_str = malloc(OUT_STR_SIZE);
+    char* out_str = calloc(OUT_STR_SIZE, 1);
 
     size_t random_index;    
     for (int i = 0; i < word_count; ++i) {
