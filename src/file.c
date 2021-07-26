@@ -32,8 +32,8 @@ char* random_string(const size_t word_count) {
 
     char* out_str = calloc(OUT_STR_SIZE, 1);
 
-    size_t random_index;    
-    for (int i = 0; i < word_count; ++i) {
+    size_t random_index, i;    
+    for (i = 0; i < word_count; ++i) {
         // Picks a random word from words.txt and appends
         // it to out_str
         random_index = rand_range(0, TOTAL_WORD_COUNT);
