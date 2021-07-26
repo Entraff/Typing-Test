@@ -22,8 +22,7 @@ cd Typing-Test && make
 ```
 
 ## Running
-After successfully compiling, cd into the bin directory found in the root project directory and execute the resulting binary
+After successfully compiling, simply run this command to start the program
 ```bash
-cd bin && ./typing_test
+make run
 ```
-An error may occur if you don't cd into the bin directory before running the program

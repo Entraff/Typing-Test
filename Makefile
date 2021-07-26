@@ -22,6 +22,9 @@ $(TARGET): $(OBJS)
 
 dirs:
 	mkdir -p $(OUTDIR)
+
+run:
+	@cd ./bin && $(TARGET)
 	
 clean:
 	rm $(OBJS)
