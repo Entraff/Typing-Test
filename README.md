@@ -1,7 +1,7 @@
 # Typing-Test
 Test out your typing skills!
 
-## Features
+## Features Coming Soon!
 - Accuracy Calculator
 - WPM tracker
 
