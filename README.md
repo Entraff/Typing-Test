@@ -22,7 +22,7 @@ cd Typing-Test && make
 ```
 
 ## Running
-After successfully compiling, cd into the bin dir directory found in the root project directory and execute the resulting binary
+After successfully compiling, cd into the bin directory found in the root project directory and execute the resulting binary
 ```bash
 cd bin && ./typing_test
 ```
