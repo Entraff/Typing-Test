@@ -6,7 +6,6 @@ CFLAGS = -std=c11 -O2 -g -Wall -Wextra -Wpedantic -Wstrict-aliasing \
 		 -Wno-gnu-compound-literal-initializer -Wno-gnu-zero-variadic-macro-arguments 
 
 OUTDIR = ./bin
-SRCDIR = ./src
 
 TARGET = typing_test
 SRC = $(wildcard ./src/*.c)
@@ -24,7 +23,7 @@ dirs:
 	mkdir -p $(OUTDIR)
 
 run:
-	@cd ./bin && $(TARGET)
+	@cd ./bin && ./$(TARGET)
 	
 clean:
 	rm $(OBJS)
