@@ -4,6 +4,8 @@
 #include "file.h"
 #include "test.h"
 #include "util.h"
+#include <unistd.h>
+#include <sys/time.h>
 
 int main() {
     srand(time(NULL));

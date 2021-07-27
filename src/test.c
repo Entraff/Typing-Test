@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#include <sys/time.h>
 #include "file.h"
+#include "util.h"
 #include "test.h"
 
 struct Test* test_init(const size_t word_count) {
@@ -39,23 +41,23 @@ void calculate_errors(struct Test* test) {
 }
 
 void print_test_info(struct Test* test) {
-    printf("\nAccuracy: %f%%\n", calculate_accuracy(test));
-    printf("WPM: %f\n", calculate_wpm(test));
-    printf("Elapsed time: %f\n", test->elapsed_time);
+    printf("\nAccuracy: %.2f%%\n", calculate_accuracy(test));
+    printf("WPM: %.2f\n", calculate_wpm(test));
+    printf("Elapsed time: %.2f seconds\n", test->elapsed_time);
     printf("Test length: %lu chars\n", test->sentence_length);
-    printf("Correct characters: %d\n", test->correct_chars);
     printf("Errors: %d\n", test->errors);
 }
 
 void start_test(struct Test* test) {
-    time_t elapsed_time = time(NULL);
+    struct timeval start, end;
+    gettimeofday(&start, NULL);
 
     puts(test->sentence); 
     fgets(test->user_response, test->sentence_length + 1, stdin);
 
-    elapsed_time = time(NULL) - elapsed_time;
+    gettimeofday(&end, NULL);
 
-    test->elapsed_time = elapsed_time;
+    test->elapsed_time = calculate_elapsed(&start, &end);
     calculate_errors(test);
 
     print_test_info(test);
