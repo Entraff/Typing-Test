@@ -32,3 +32,7 @@ After successfully compiling, simply run this command to start the program
 ```bash
 make run
 ```
+You can also run the program with the following while in the root project directory
+```bash
+cd bin && ./typing_test
+```
