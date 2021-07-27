@@ -1,6 +1,12 @@
 # Typing-Test
 Test out your typing skills!
 
+## Backstory
+I had first gotten the idea to make a seemingly trivial project when I was on the plane,
+and I wanted to practice a bit of typing. However, I soon realized I had no internet
+available on the plane I was in. That is when I got the idea to make an offline typing
+program so I would not have to rely on the internet for something so simple.
+
 ## Features
 - Accuracy Calculator
 - WPM tracker
