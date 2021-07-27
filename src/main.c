@@ -7,6 +7,7 @@
 
 int main() {
     srand(time(NULL));
-    puts(random_string(10));
+    struct Test* test = test_init(25);
+    start_test(test);
     return EXIT_SUCCESS;
 }

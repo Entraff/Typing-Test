@@ -9,7 +9,7 @@ struct Test* test_init(const size_t word_count) {
 
     test->sentence = random_string(word_count);
     test->sentence_length = strlen(test->sentence);
-    test->user_response = malloc(sizeof(char) * (test->sentence_length + 1));
+    test->user_response = malloc(sizeof(char) * (test->sentence_length));
     test->correct_chars = test->sentence_length;
     test->errors = 0;
     test->elapsed_time = 0.0;
@@ -38,15 +38,25 @@ void calculate_errors(struct Test* test) {
     }
 }
 
+void print_test_info(struct Test* test) {
+    printf("\nAccuracy: %f%%\n", calculate_accuracy(test));
+    printf("WPM: %f\n", calculate_wpm(test));
+    printf("Elapsed time: %f\n", test->elapsed_time);
+    printf("Test length: %lu chars\n", test->sentence_length);
+    printf("Correct characters: %d\n", test->correct_chars);
+    printf("Errors: %d\n", test->errors);
+}
+
 void start_test(struct Test* test) {
-    clock_t timer = clock();
+    time_t elapsed_time = time(NULL);
 
     puts(test->sentence); 
-    fgets(test->user_response, test->sentence_length, stdin);
+    fgets(test->user_response, test->sentence_length + 1, stdin);
 
-    timer = clock() - timer;  
-    double elapsed_time = (double)timer - CLOCKS_PER_SEC;
+    elapsed_time = time(NULL) - elapsed_time;
 
     test->elapsed_time = elapsed_time;
     calculate_errors(test);
+
+    print_test_info(test);
 }

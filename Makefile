@@ -10,6 +10,7 @@ OUTDIR = ./bin
 TARGET = typing_test
 SRC = $(wildcard ./src/*.c)
 OBJS = $(SRC:.c=.o)
+# testing
 
 all: dirs $(TARGET) clean
 

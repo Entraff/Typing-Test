@@ -20,6 +20,7 @@ double calculate_wpm(struct Test* test);
 double calculate_accuracy(struct Test* test);
 void calculate_errors(struct Test* test);
 
+void print_test_info(struct Test* test);
 void start_test(struct Test* test);
 
 #endif // TEST_H
